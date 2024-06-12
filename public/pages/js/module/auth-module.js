@@ -138,7 +138,7 @@ function handleAuthorizedSignIn(user)
         }
 
 
-        window.location.href = "//403.html"
+        window.location.href = "/403.html"
 
         
     }, (errorObject) => {
