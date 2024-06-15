@@ -20,9 +20,9 @@ h1{
 }
 
 h2{
-    font-weight:400;
+    font-weight:800;
     font-size: 24px;
-    color:#EB741D;
+    color:#2D3748;
 }
 
 .button{
@@ -30,8 +30,8 @@ h2{
     background-color: #EB741D;
     border:1px solid #EB741D;
     color:#F7F9FC;
-    width:auto;
     height:40px;
+    width:120px;
     padding:0px 16px 0px 16px;
     border-radius: 8px;
     line-height: 40px;
@@ -65,6 +65,11 @@ header{
     margin-bottom:24px;
 }
 
+.header__sub-text{
+    font-size: 24px;
+    color:#EB741D
+}
+
 hr{
     color:#ffffff;
     width:30%;
@@ -77,4 +82,46 @@ hr{
     row-gap:4px;
     flex-direction: column;
     align-items: center;
+}
+
+#websites{
+    display: flex;
+    flex-flow: column nowrap;
+    row-gap: 32px;
+    align-items: center;
+    margin-bottom: 64px;
+}
+
+.website {
+    display: flex;
+    flex-flow: row nowrap;
+    width:800px;
+    height:160px;
+    border-radius: 16px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.website__number{
+    border-radius: 16px 0px 0px 16px;
+    background-color: #EB741D;
+    width:48px;
+    text-align: center;
+    line-height: 160px;
+    color:#ffffff
+}
+
+.website__info{
+    display:flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    margin-left: 16px;
+    row-gap: 8px;
+}
+
+.website__info__developer{
+    color: #B3B3B3;
+    font-size: 14px;
+}
+.website__info__name{
+    font-weight: bolder;
 }

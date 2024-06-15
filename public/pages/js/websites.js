@@ -2,9 +2,9 @@ import {signOutUser, verifyAuth } from './module/auth-module.js'
 import {deleteDocument, readAllDocumentsRealtime } from './module/database-module.js'
 
 document.addEventListener("DOMContentLoaded", function(){
-    getAllWebsites();
+//  getAllWebsites();
 })
-
+/*
 async function getAllWebsites() {
     const collectionName = "websites";
     const filterField = null;
@@ -15,7 +15,17 @@ async function getAllWebsites() {
     await readAllDocumentsRealtime(collectionName, function(websites){
         updateTable(tbody, websites)
     });
+}
+*/
 
+async function getWebsiteArray() {
+    const collectionName = "websites";
+    const websites = await new Promise((resolve, reject) => {
+        readAllDocumentsRealtime(collectionName, function(websites) {
+            resolve(websites);
+        });
+    });
+    return websites;
 }
 
 function updateTable(tbody, websites)
@@ -69,4 +79,8 @@ function handleWebsiteDeleteAction(event)
     let button = event.target;
     let websiteKey = button.dataset.website
     deleteDocument("websites", websiteKey)
+}
+
+export {
+    getWebsiteArray
 }

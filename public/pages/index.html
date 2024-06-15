@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quirky Web Directory</title>
-    <script src="./js/index.js"></script>
+    <script type="module" src="./js/index.js"></script>
+    <script src="https://kit.fontawesome.com/5812ec0641.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="../styles.css" />
 </head>
 <body>
@@ -16,8 +17,8 @@
 
     <header>
         <h1 class="header__main-text">Quirky Web Directory</h1>
-        <h2 class="header__sub-text">Browse our vast network of quirky websites!</h2>
-        <div class="button"><i class="fa-regular fa-dice"></i></i>Randomize</div>
+        <p class="header__sub-text">Browse our vast network of quirky websites!</p>
+        <a href="#"><div class="button" id="randomize-button"><i class="fa-solid fa-wand-sparkles"></i> Randomize</div></a>
     </header>
 
     <hr>
@@ -31,6 +32,7 @@
         </select>
     </div>
 
+    <div id="websites"></div>
 
 </body>
 </html>
