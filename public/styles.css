@@ -14,9 +14,6 @@ h1{
     font-size: 60px;
     font-weight:bold;
     color:#2D3748;
-    /*
-    text-shadow:2px 2px 2px #EB741D;
-    */
 }
 
 h2{
@@ -31,29 +28,43 @@ h2{
     border:1px solid #EB741D;
     color:#F7F9FC;
     height:40px;
-    width:120px;
+    line-height: 40px;
     padding:0px 16px 0px 16px;
     border-radius: 8px;
-    line-height: 40px;
     text-align: center;
 }
 
 .button:hover{
     color:#EB741D;
-    background-color:#F7F9FC;
-    /*
-    filter:drop-shadow(2px 2px 2px #EB7F1D);
-    */
+    background-color:rgb(0,0,0, 0);
     transition-duration: 200ms;
 }
 
 nav{
+    background-color: #ffffff;
     height:80px;
     display:flex;
-    column-gap: 15px;
     align-items:center;
-    justify-content:end ;
-    margin-right: 32px;
+    justify-content: space-between;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 0px 16px 0px 16px;
+}
+
+.nav-left__logo{
+    font-weight: bold;
+    font-size: 1.5em;
+    color:#ffffff;
+    background-color: #EB741D;
+    border-radius: 8px;
+    padding:8px;
+}
+
+.nav-right{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 15px;
+
 }
 
 header{
@@ -93,20 +104,22 @@ hr{
 }
 
 .website {
+    background-color: #ffffff;
     display: flex;
     flex-flow: row nowrap;
     width:800px;
-    height:160px;
+    height:auto;
     border-radius: 16px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .website__number{
+    display:flex;
     border-radius: 16px 0px 0px 16px;
     background-color: #EB741D;
-    width:48px;
-    text-align: center;
-    line-height: 160px;
+    min-width:48px;
+    align-items: center;
+    justify-content: center;
     color:#ffffff
 }
 
@@ -116,12 +129,19 @@ hr{
     justify-content: center;
     margin-left: 16px;
     row-gap: 8px;
+    padding: 16px 0px 16px 0px;
 }
 
-.website__info__developer{
+.website__info__developer, .website__info__upload-date{
     color: #B3B3B3;
     font-size: 14px;
 }
+
 .website__info__name{
     font-weight: bolder;
 }
+
+.website__info__link{
+    width:fit-content;
+}
+
