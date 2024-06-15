@@ -10,14 +10,14 @@ body{
 
 h1{
     font-weight: bold;
-    font-size: 60px;
+    font-size: 4em;
     font-weight:800;
     color:#2D3748;
 }
 
 h2{
     font-weight:800;
-    font-size: 24px;
+    font-size: 1.5em;
     color:#2D3748;
 }
 
@@ -54,10 +54,7 @@ nav{
 }
 
 .nav-left__logo{
-    font-size: 1.5em;
-    color:#ffffff;
-    background-color: #EB741D;
-    border-radius: 8px;
+    font-size: 2em;
     padding:8px;
 }
 
@@ -66,7 +63,6 @@ nav{
     flex-direction: row;
     align-items: center;
     column-gap: 15px;
-
 }
 
 header{
@@ -78,7 +74,7 @@ header{
 }
 
 .header__sub-text{
-    font-size: 24px;
+    font-size: 1.5em;
     color:#EB741D
 }
 
@@ -102,6 +98,11 @@ hr{
     row-gap: 32px;
     align-items: center;
     margin-bottom: 64px;
+}
+
+.websites__loading-message{
+    color: #B3B3B3;
+    padding:10% 0px 10% 0px;
 }
 
 .website {
@@ -135,7 +136,7 @@ hr{
 
 .website__info__developer, .website__info__upload-date{
     color: #B3B3B3;
-    font-size: 14px;
+    font-size: 0.8em;
 }
 
 .website__info__name{
@@ -146,3 +147,28 @@ hr{
     width:fit-content;
 }
 
+.learn-more{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.learn-more__title{
+    font-size:2em;
+    font-weight:400;
+    padding-top:32px;
+}
+
+.learn-more__text{
+    width:50%;
+    font-size: 1.5em;
+    padding:32px;
+}
+
+.copyright-footer{
+    display: flex;
+    color: #B3B3B3;
+    font-size: 0.8em;
+    justify-content: center;    
+    line-height: 48px;
+}
