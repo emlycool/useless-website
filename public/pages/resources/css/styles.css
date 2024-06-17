@@ -27,6 +27,8 @@ h2{
     border:1px solid #EB741D;
     color:#F7F9FC;
     height:40px;
+    overflow: hidden;
+    min-width: 60px;
     line-height: 40px;
     padding:0px 16px 0px 16px;
     border-radius: 8px;
@@ -53,12 +55,15 @@ nav{
     padding: 0px 16px 0px 16px;
 }
 
-.nav-left__logo{
+.nav__left__logo{
+    color: #EB741D;
     font-size: 2em;
-    padding:8px;
+    font-weight:900;
+    padding:12px;
+    border-radius: 8px;
 }
 
-.nav-right{
+.nav__right{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -75,7 +80,8 @@ header{
 
 .header__sub-text{
     font-size: 1.5em;
-    color:#EB741D
+    color:#EB741D;
+    text-align: center;
 }
 
 hr{
@@ -97,7 +103,7 @@ hr{
     flex-flow: column nowrap;
     row-gap: 32px;
     align-items: center;
-    margin-bottom: 64px;
+    margin: 16px;
 }
 
 .websites__loading-message{
@@ -113,6 +119,7 @@ hr{
     height:auto;
     border-radius: 16px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
 }
 
 .website__number{
@@ -170,5 +177,68 @@ hr{
     color: #B3B3B3;
     font-size: 0.8em;
     justify-content: center;    
-    line-height: 48px;
+    padding:16px;
+    text-align: center;
 }
+
+.loader {
+    border: 8px solid #f3f3f3; 
+    border-top: 8px solid #EB741D;
+    margin:64px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  /* Tablet Optimization*/
+  @media only screen and (max-width: 1000px) {
+    .website{
+        width: 80vw;
+    }
+
+    .websites{
+        padding:0px;
+        flex-flow: row wrap;
+    }
+
+    .website__info__description{
+        text-overflow: ellipsis;
+        overflow: hidden;
+        height:2.4em;
+    }
+    
+    .nav{
+        justify-content: center;
+    }
+
+    .nav__right{
+        display: none;
+    }
+
+  }
+
+    /* Mobile Optimization*/
+    @media only screen and (max-width: 500px) {
+
+        *{
+            font-size: 12px;
+        }
+
+        h1{
+            font-size: 32px;
+        }
+
+        h2{
+            font-size: 18px;
+        }
+
+        h3, p{
+            font-size: 12px;
+        }
+    }

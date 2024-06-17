@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quirky Web Directory</title>
+    <title>Home | Quirky Web Directory</title>
     <script type="module" src="./js/index.js"></script>
     <script src="https://kit.fontawesome.com/5812ec0641.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="../styles.css" />
+    <link rel="stylesheet" type="text/css" href="./resources/css/styles.css" />
 </head>
 <body>
 
     <nav class="nav">
-        <div class="nav-left">
-            <a href="index.html"><span class="nav-left__logo button">QuirkyWeb</span></a>
+        <div class="nav__left">
+            <a href="index.html"><span class="nav__left__logo">QuirkyWeb</span></a>
         </div>
-        <div class="nav-right">
+        <div class="nav__right">
             Created by Humber College students.
             <a href="./learnmore.html"> <div class="button">Learn More</div></a>
         </div>
@@ -36,9 +36,7 @@
         </select>
     </div>
 
-    <section id="websites">
-        <p class="websites__loading-message">Loading websites...</p>
-    </section>
+    <section id="websites"><div class="loader"></div></section>
 
     <section class="copyright-footer">Copyright &#169; 2024 Ozan Sereflioglu & Joshua Moshood. All rights reserved.</section>
 </body>
