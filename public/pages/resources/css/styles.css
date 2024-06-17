@@ -21,6 +21,10 @@ h2{
     color:#2D3748;
 }
 
+h3, h4{
+    font-weight: 200;
+}
+
 .button{
     cursor: pointer;
     background-color: #EB741D;
@@ -142,8 +146,8 @@ hr{
 }
 
 .website__info__developer, .website__info__upload-date{
-    color: #B3B3B3;
-    font-size: 0.8em;
+    color: #999999;
+    font-size: 1em;
 }
 
 .website__info__name{

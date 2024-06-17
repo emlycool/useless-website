@@ -91,7 +91,7 @@ function generateWebsiteCards(websitesArray, websitesElement) {
         const infoDiv = document.createElement("div");
         infoDiv.classList.add("website__info");
 
-        const developerElement = document.createElement("p");
+        const developerElement = document.createElement("h4");
         developerElement.textContent = "Created by " + websiteData[1].developer_name;
         developerElement.classList.add("website__info__developer");
 
@@ -108,7 +108,7 @@ function generateWebsiteCards(websitesArray, websitesElement) {
         nameElement.textContent = websiteData[1].name;
         nameElement.classList.add("website__info__name");
 
-        const descriptionElement = document.createElement("p");
+        const descriptionElement = document.createElement("h3");
         descriptionElement.textContent = websiteData[1].description;
         descriptionElement.classList.add("website__info__description");
 
@@ -136,6 +136,7 @@ function generateWebsiteCards(websitesArray, websitesElement) {
     });
 }
 
+// Console log welcome message
 console.log(
     '%cWelcome to QuirkyWeb!',
     'color:#EB741D; font-family: Courier New, sans-serif;font-size:24px; font-weight:bold; padding:4px;'
