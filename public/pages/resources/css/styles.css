@@ -217,7 +217,7 @@ hr{
         justify-content: center;
     }
 
-    .nav__right{
+    .nav__right__text{
         display: none;
     }
 
