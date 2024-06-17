@@ -124,6 +124,7 @@ hr{
     border-radius: 16px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     overflow: hidden;
+    position: relative;
 }
 
 .website__number{
@@ -136,6 +137,19 @@ hr{
     color:#ffffff
 }
 
+.website__new-badge{
+    position:relative;
+    text-align: center;
+    top:16px;
+    right:32px;
+    background-color: #EB741D;
+    color:#ffffff;
+    padding:4px;
+    width:fit-content;
+    height:12px;
+    line-height: 12px;
+    border-radius: 4px;
+}
 .website__info{
     display:flex;
     flex-flow: column nowrap;
@@ -143,6 +157,7 @@ hr{
     margin-left: 16px;
     row-gap: 8px;
     padding: 16px 0px 16px 0px;
+    width: 100%;
 }
 
 .website__info__developer, .website__info__upload-date{

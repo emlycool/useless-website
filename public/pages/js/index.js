@@ -5,11 +5,10 @@ let currentIndex = 0;
 
 // Once website array is retrieved, do the following
 getWebsiteArray().then(websiteObject => {
-	
 	 // Initial Setup
-	let websitesElement = document.getElementById("websites");
+	const websitesArray = Object.entries(websiteObject).sort((a, b) => b[1].created_at - a[1].created_at);
+	const websitesElement = document.getElementById("websites");
 	websitesElement.innerHTML = ""
-	let websitesArray = Object.entries(websiteObject).sort((a, b) => b[1].created_at - a[1].created_at);
 	
     // Randomize button functionality
     const randomizeButton = document.getElementById("randomize-button");
@@ -84,54 +83,87 @@ function generateWebsiteCards(websitesArray, websitesElement) {
         const websiteCard = document.createElement("div");
         websiteCard.classList.add("website");
 
+		// Number Div
         const numberDiv = document.createElement("div");
         numberDiv.textContent = currentIndex + index + 1;
         numberDiv.classList.add("website__number");
 
+		// Time Variables
+		const uploadEpoch = websiteData[1].created_at;
+		const currentTime = new Date().getTime();
+		const timeSinceUpload = currentTime - websiteData[1].created_at;
+
+		// 'New' Badge
+		const newBadge = document.createElement("div");
+		newBadge.innerHTML = "<p>new</p>"
+		newBadge.classList = "website__new-badge"
+		console.log("current time: " + currentTime)
+		console.log("upload time: " + uploadEpoch)
+		console.log("time since upload: " + timeSinceUpload)
+ 
+		// Info Div (stores website name, description, developer name, upload date, visit button)
         const infoDiv = document.createElement("div");
         infoDiv.classList.add("website__info");
 
+		// Developer Name
         const developerElement = document.createElement("h4");
         developerElement.textContent = "Created by " + websiteData[1].developer_name;
         developerElement.classList.add("website__info__developer");
-
-        const uploadEpoch = websiteData[1].created_at;
+ 
+		// Convert upload date epoch to UTC time in milliseconds, set as uploadDate
         const uploadDate = new Date(0);
         uploadDate.setUTCMilliseconds(uploadEpoch);
 
+		// Upload Date element
         const uploadDateElement = document.createElement("p");
         const formattedDate = formatDateToUTCString(uploadDate);
         uploadDateElement.textContent = "Submitted on " + formattedDate;
         uploadDateElement.classList.add("website__info__upload-date");
 
+		// Developer Name element
         const nameElement = document.createElement("h2");
         nameElement.textContent = websiteData[1].name;
         nameElement.classList.add("website__info__name");
 
+		// Description element
         const descriptionElement = document.createElement("h3");
         descriptionElement.textContent = websiteData[1].description;
         descriptionElement.classList.add("website__info__description");
 
+		// Link anchor tag
         const linkElement = document.createElement("a");
         linkElement.href = websiteData[1].url;
         linkElement.target = "_blank";
         linkElement.classList.add("website__info__link");
 
+		// Link button
         const linkButton = document.createElement("div");
         linkButton.innerHTML = 'Visit Website <i class="fa-solid fa-arrow-right"></i>';
         linkButton.classList.add("button");
-
+		
+		// Append link button to link anchor tag
         linkElement.appendChild(linkButton);
 
+		// Append info elements to info div
         infoDiv.appendChild(developerElement);
         infoDiv.appendChild(nameElement);
         infoDiv.appendChild(descriptionElement);
         infoDiv.appendChild(uploadDateElement);
         infoDiv.appendChild(linkElement);
 
+		// Append number div and info div to website card
         websiteCard.appendChild(numberDiv);
         websiteCard.appendChild(infoDiv);
 
+		// If time since post has been uploaded is less than 1 hour, display 'New' badge
+		if (timeSinceUpload < 3600000 ){
+			newBadge.style.display = "block"
+			websiteCard.appendChild(newBadge);
+		} else {
+			newBadge.style.display = "none"
+		}
+		 
+		// Append website card to websites element
         websitesElement.appendChild(websiteCard);
     });
 }
