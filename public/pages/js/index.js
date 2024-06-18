@@ -9,7 +9,7 @@ document.querySelector(":root").style.setProperty("--randomColor", randomColor()
 // once website array is retrieved, do the following
 getWebsiteArray().then(websiteObject => {
 
-	// randomize button
+	// set the randomize button
 	const randomizeButton = document.getElementById("randomize-button")
 	randomizeButton.addEventListener("click", () => {
 		let randomUrl = getRandomUrl(websiteObject)
@@ -95,7 +95,7 @@ function generateWebsiteCards(websitesArray, websitesElement) {
 
 		// upload date element
 		const uploadDateElement = document.createElement("p");
-		const formattedDate = formatDateToUTCString(uploadDate);
+		const formattedDate = formatEpochToUTCString(uploadDate);
 		uploadDateElement.textContent = "Submitted on " + formattedDate;
 		uploadDateElement.classList.add("website__info__upload-date");
 
@@ -165,7 +165,7 @@ function loadMore(index, websitesArray, websitesElement, loadMoreButton) {
 }
 
 // function to convert epoch timestamp to a UTC string
-function formatDateToUTCString(date) {
+function formatEpochToUTCString(date) {
 	const day = String(date.getUTCDate()).padStart(2, "0");
 	const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
 		"Jul", "Aug", "Sep", "Oct", "Nov", "Dec"

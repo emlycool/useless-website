@@ -220,6 +220,17 @@ hr {
     width: fit-content;
 }
 
+/****************************************************** 'Loading' Spinner ***************************************************/
+
+.loading {
+    width: 32px;
+    height: 32px;
+    margin: 32px;
+    border: 8px solid #FFFFFF;
+    border-top: 8px solid var(--randomColor);
+    border-radius: 50%;
+    animation: rotate 1s linear infinite;
+  }
 
 @keyframes rotate {
     0% {
