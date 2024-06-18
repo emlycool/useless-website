@@ -17,10 +17,10 @@ getWebsiteArray().then(websiteObject => {
             let learnMoreText = document.getElementById("learn-more");
             let textContent = learnMoreText.innerHTML;
             let lastIndex = textContent.lastIndexOf("QuirkyWeb");
-            let randomIndex = Math.floor(Math.random() * 8);
+            let randomIndex = Math.floor(Math.random() * 7);
             learnMoreText.innerHTML = textContent.substring(0, lastIndex) + "<span id=\"attentive\" class=\"attentive\">QuirkyWeb</span>" + textContent.substring(lastIndex + 9);
             document.getElementById("attentive").addEventListener("click", function () {
-                learnMoreText.innerHTML = "<img id=\"attentive-webp\"class=\"attentive-webp attentive-hidden\"src=\"/public/pages/resources/imgs/attentive/attentive${randomIndex + 1}.webp\">"
+                learnMoreText.innerHTML = `<img id=\"attentive-webp\"class=\"attentive-webp attentive-hidden\"src=\"/public/pages/resources/imgs/attentive/attentive${randomIndex + 1}.webp\">`
                 setTimeout(function() {
                     document.getElementById("attentive-webp").classList.remove("attentive-hidden");
                 }, 1) // 1ms (to trigger the transition)
