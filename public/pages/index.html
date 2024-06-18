@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Where curiosity meets creativity!">
+    <meta name="keywords" content="Random, Quirky, QuirkyWeb">
     <title>Home | QuirkyWeb</title>
     <script type="module" src="./js/index.js"></script>
-    <script src="https://kit.fontawesome.com/5812ec0641.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="./resources/css/styles.css" />
 </head>
 <body>
@@ -16,14 +17,14 @@
         </div>
         <div class="nav__right">
             <p class="nav__right__text">Created by Humber College students.</p>
-            <a href="./learnmore.html"> <div class="button">Learn More</div></a>
+            <a href="./learnmore.html" class="button">Learn more...</a>
         </div>
     </nav>
 
-    <header>
+    <header id="header">
         <h1 class="header__main-text">QuirkyWeb</h1>
-        <p class="header__sub-text">Where curiosity meets creativity!</p>
-        <a href="#"><div class="button random" id="randomize-button"><i class="fa-solid fa-wand-sparkles"></i> Random Website</div></a>
+        <h2 class="header__sub-text">Where curiosity meets creativity!</h2>
+        <div id="randomize-button" class="random button"><i class="fa-solid fa-wand-sparkles"></i> Random Website</div>
     </header>
 
     <hr>
@@ -36,8 +37,12 @@
         </select>
     </div>
 
-    <section id="websites"><div class="loader"></div></section>
+    <section id="websites">
+        <!-- Loader element courtesy of W3Schools (https://www.w3schools.com/howto/howto_css_loader.asp)-->
+        <div class="loading"></div>
+    </section>
 
-    <section class="copyright-footer">Copyright &#169; 2024 Ozan Sereflioglu & Joshua Moshood. All rights reserved.</section>
+    <footer class="copyright-footer">Copyright &#169; 2024 Ozan Sereflioglu & Joshua Moshood. All rights reserved.</footer>
+    <script src="https://kit.fontawesome.com/5812ec0641.js" crossorigin="anonymous"></script>
 </body>
 </html>
