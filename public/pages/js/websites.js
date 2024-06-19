@@ -11,7 +11,9 @@ async function getAllWebsites() {
     const filterValue = null;
     const sortField = "created_at";
     const websiteTable = document.querySelector("#website-table");
-
+    if(!websiteTable){
+        return;
+    }
     const tbody = websiteTable.querySelector("tbody");
     await readAllDocumentsRealtime(collectionName, function(websites){
         updateTable(tbody, websites)
