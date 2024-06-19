@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function(){
     // redirect user to dashboard if signed in
     handleAuthChanged(user => {
         if (user) {
-            window.location.href = '/index'
+            window.location.href = '/index.html'
             return;
         }
         document.querySelector("#login-content")?.classList.remove("w3-hide");

@@ -1,0 +1,17 @@
+{
+  "name": "quicky-website",
+  "version": "1.0.0",
+  "description": "Code Repo for the Useless website directory",
+  "main": "comile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^5.0.0",
+    "gulp-html-prettify": "^0.0.1",
+    "gulp-pug": "^5.0.0"
+  }
+}

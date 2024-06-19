@@ -1,0 +1,35 @@
+extends layout/admin-layout.pug
+
+block extrahead
+  script(type="module" src="/js/add-website.js")
+
+block content
+    .w3-main(style="margin-left:300px;margin-top:43px;")
+        header.w3-container(style="padding-top:22px")
+            h5
+            b
+                i.fa.fa-dashboard
+                |  Add new Website
+
+        .w3-row-padding.w3-margin-bottom.w3-padding-large
+            // website form
+            form.w3-container#website-form
+                .w3-section
+                    label(for="name")
+                    b Name:
+                    input.w3-input.w3-border.w3-margin-bottom(type="text" id="name" name="name" required)
+                .w3-section
+                    label(for="description")
+                    b Description:
+                    input.w3-input.w3-border.w3-margin-bottom(type="text" id="description" name="description")
+                .w3-section
+                    label(for="url")
+                    b URL:
+                    input.w3-input.w3-border.w3-margin-bottom(type="url" id="url" name="url" required)
+                .w3-section
+                    label(for="developer_name")
+                    b Developer Name:
+                    input.w3-input.w3-border.w3-margin-bottom(type="text" id="developer_name" name="developer_name")
+                p#error-message(style="color:red;")
+                div
+                    button.w3-button.w3-orange(type="submit") Add Website

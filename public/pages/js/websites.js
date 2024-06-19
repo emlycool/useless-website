@@ -2,21 +2,21 @@ import {signOutUser, verifyAuth } from './module/auth-module.js'
 import {deleteDocument, readAllDocumentsRealtime } from './module/database-module.js'
 
 document.addEventListener("DOMContentLoaded", function(){
-//  getAllWebsites();
+ getAllWebsites();
 })
-/*
+
 async function getAllWebsites() {
     const collectionName = "websites";
     const filterField = null;
     const filterValue = null;
     const sortField = "created_at";
     const websiteTable = document.querySelector("#website-table");
+
     const tbody = websiteTable.querySelector("tbody");
     await readAllDocumentsRealtime(collectionName, function(websites){
         updateTable(tbody, websites)
     });
 }
-*/
 
 async function getWebsiteArray() {
     const collectionName = "websites";
@@ -59,7 +59,7 @@ function updateTable(tbody, websites)
         const deleteButton = document.createElement("button")
         editButton.className = "w3-button w3-green";
         editButton.textContent = "Edit";
-        editButton.href = "//edit-website.html?website=" + key
+        editButton.href = "/edit-website.html?website=" + key
         deleteButton.className = "w3-button w3-red";
         deleteButton.textContent = "Delete";
         deleteButton.dataset.website = key;
@@ -74,11 +74,13 @@ function updateTable(tbody, websites)
     }
 }
 
-function handleWebsiteDeleteAction(event)
-{
+function handleWebsiteDeleteAction(event) {
     let button = event.target;
-    let websiteKey = button.dataset.website
-    deleteDocument("websites", websiteKey)
+    let websiteKey = button.dataset.website;
+    let confirmation = confirm("Are you sure you want to delete this website?");
+    if (confirmation) {
+        deleteDocument("websites", websiteKey);
+    }
 }
 
 export {

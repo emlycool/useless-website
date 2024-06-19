@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title Login Page
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css")
+    script(type="module" src="/js/login.js")
+    style.
+      .login-card {
+          max-width: 500px;
+          margin: auto;
+          margin-top: 50px;
+      }
+  body
+    .w3-container.login-card(id="login-content" class="w3-hide")
+      h2 Login Page
+      form.w3-container.w3-card-4(id="login-form")
+        p
+          label.w3-text-blue
+            b Email
+          input.w3-input.w3-border(name="email" type="text" required)
+        p
+          label.w3-text-blue
+            b Password
+          input.w3-input.w3-border(name="password" type="password" required)
+        p#error-message(style="color:red;")
+        p
+          button.w3-btn.w3-blue Login

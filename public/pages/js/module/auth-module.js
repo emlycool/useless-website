@@ -111,7 +111,7 @@ function verifyAuth(redirect = null)
     onAuthStateChanged(auth, (user) => {
         handleAuthorizedSignIn(user);
         if(!user){
-            window.location.href = redirect ? redirect : '//login'
+            window.location.href = redirect ? redirect : '/login.html'
         }
     });   
 }

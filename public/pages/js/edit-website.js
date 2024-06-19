@@ -1,4 +1,3 @@
-import {signOutUser, verifyAuth } from './module/auth-module.js'
 import {readDocumentRealtime, updateDocument, readDocument } from './module/database-module.js'
 
 document.addEventListener("DOMContentLoaded", function(){
@@ -7,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function(){
     let url = window.location.href;
     const websiteKey = getQueryParam(url, "website");
     if(!websiteKey){
-        window.location.href = '//404.html';
+        window.location.href = '/404.html';
     }
     form?.addEventListener("submit", (event) => handleUpdateWebsiteFormSubmit(event, websiteKey))
 
@@ -55,8 +54,9 @@ async function handleUpdateWebsiteFormSubmit(event, websiteKey)
 function loadFormData(websiteKey, form)
 {
     readDocumentRealtime("websites", websiteKey, (website) => {
+        console.log(form);
         if(!website){
-            window.location.href = '//404.html';
+            window.location.href = '/404.html';
         }
 
         form.querySelector("[name='name']").value = website.name;
