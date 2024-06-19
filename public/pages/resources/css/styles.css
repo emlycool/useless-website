@@ -261,6 +261,16 @@ hr {
     opacity:0;
 }
 
+/****************************************************** Error Messages ************************************************************/
+.error{
+    padding: 36px;
+    text-align: center;
+}
+
+.error__title{
+    font-size: 3em;
+    color: var(--randomColor);
+}
 
 /****************************************************** Tablet Optimization **************************************************/
 @media only screen and (max-width: 1000px) {

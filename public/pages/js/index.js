@@ -17,7 +17,7 @@ getWebsiteArray().then(websiteObject => {
 	});
 
 	// initialize setup
-	const websitesArray = Object.entries(websiteObject).sort((a, b) => b[1].created_at - a[1].created_at);
+	const websitesArray = Object.entries(websiteObject).sort((a, b) => b[1].created_at - a[1].created_at); // Initial sorting (by most recent)
 	const websitesElement = document.getElementById("websites");
 	websitesElement.innerHTML = ""
 
@@ -36,11 +36,11 @@ getWebsiteArray().then(websiteObject => {
 		// if user selects 'most recent', sort websitesArray by most recent
 		if (sortDropdown.value === "most-recent") {
 			websitesArray.sort((a, b) => b[1].created_at - a[1].created_at);
-			// if user selects 'A-Z', sort websitesArray in alphabetical order
+		// if user selects 'A-Z', sort websitesArray in alphabetical order
 		} else if (sortDropdown.value === "alphabetical") {
 			websitesArray.sort((a, b) => {
-				const nameA = a[1].name.toUpperCase();
-				const nameB = b[1].name.toUpperCase();
+				const nameA = a[1].name.toUpperCase().replace(/^the\s+/, '');;
+				const nameB = b[1].name.toUpperCase().replace(/^the\s+/, '');;
 				if (nameA < nameB) return -1;
 				if (nameA > nameB) return 1;
 				return 0;
@@ -152,12 +152,14 @@ function generateWebsiteCards(websitesArray, websitesElement) {
 
 // function to load and append more website cards to websitesElement
 function loadMore(index, websitesArray, websitesElement, loadMoreButton) {
-	const nextIndex = index + 4;
+	const nextIndex = index + 4; // Load 4 results at a time
 	const remainingWebsites = websitesArray.slice(index, nextIndex);
 	generateWebsiteCards(remainingWebsites, websitesElement);
 	currentIndex = nextIndex;
+	// If currentIndex surpasses number of total websites, hide loadMoreButton
 	if (currentIndex >= websitesArray.length) {
-		loadMoreButton.style.display = "none";
+	 	loadMoreButton.style.display = "none";
+	// Else, display the loadMoreButton
 	} else {
 		loadMoreButton.style.display = "block";
 	}

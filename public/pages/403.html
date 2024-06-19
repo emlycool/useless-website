@@ -1,9 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Access Denied</title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="404 Error: file not found">
+    <meta name="keywords" content="404, error, failed, abort">
+    <title>404 Error | QuirkyWeb</title>
+    <script type="module" src="./js/404.js"></script>
+    <link rel="stylesheet" type="text/css" href="./resources/css/styles.css" />
     <script type="module">
         import {signOutUser} from '/js/module/auth-module.js'
         setTimeout(() => {
@@ -12,9 +16,23 @@
     </script>
 </head>
 <body>
-    <div class="w3-container w3-center w3-red">
-        <h1 class="w3-xxlarge">403</h1>
-        <p class="w3-large">Sorry, you do not have permission to access this page.</p>
-    </div>
+    <nav class="nav">
+        <div class="nav__left">
+            <a href="index.html"><span class="nav__left__logo">QuirkyWeb</span></a>
+        </div>
+        <div class="nav__right">
+            <p class="nav__right__text">Created by Humber College students.</p>
+            <a href="./learnmore.html" class="button">Learn More</a>
+        </div>
+    </nav>
+
+    <section class="error" id="4">
+        <p class="error__title">403 Error</p>
+        <br><br>  
+        <p class="error__subtext">Sorry, you don't have permission to view this page.</p>
+    </section>
+    
+    <section class="copyright-footer">Copyright &#169; 2024 Ozan Sereflioglu & Joshua Moshood. All rights reserved.</section>
+    <script src="https://kit.fontawesome.com/5812ec0641.js" crossorigin="anonymous"></script>
 </body>
 </html>
