@@ -4,7 +4,7 @@
   "description": "Code Repo for the Useless website directory",
   "main": "comile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npx gulp pug"
   },
   "keywords": [],
   "author": "",
